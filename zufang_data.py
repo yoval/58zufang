@@ -70,6 +70,7 @@ def int_phone_number(phone_number):
 
 df['短链接'] = df['链接'].apply(short_url)
 df['联系电话'] = df['联系电话'].apply(int_phone_number)
+price_list = list(df['价格'])
 html_list = []
 for row in df.itertuples():
     html = "<p>%s</p><p>%s，%s</p><p>%s，%s</p><p><a href='%s'>链接</a></p>"%(row.标题,row.房屋类型,row.价格,row.联系人,row.联系电话,row.短链接)
@@ -81,7 +82,7 @@ for zufang_location in zufang_locations:
     html = html_list[count]
     folium.Marker(zufang_location, 
                   popup=folium.Popup(html=html),
-                  #tooltip="甜啦啦" #hover
+                  tooltip="%s元"%price_list[count] #hover
                   ).add_to(m)
     count+=1
 

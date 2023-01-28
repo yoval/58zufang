@@ -2,7 +2,7 @@
 
 最终目的：把58同城租房信息在地图上标注出来。
 
-http://cdn.bizha.top/echarts/zufang_bengbu.html
+https://cdn.bizha.top/echarts/zufang_bengbu.html
 
 ![Snipaste_2023-01-28_20-43-18](https://images.bizha.top/picgo/202301282043833.png)
 
