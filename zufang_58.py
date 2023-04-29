@@ -19,7 +19,8 @@ time.sleep(5)
 df = pd.DataFrame() #生成df
 input('如需登录，请在打开网页登录，不登录可能验证码比较多。按回车键继续……')
 while True:
-    btns = browser.find_elements_by_xpath("//div[@class='des']/h2/a[@class='strongbox']")
+#    btns = browser.find_elements_by_xpath("//div[@class='des']/h2/a[@class='strongbox']")
+    btns = browser.find_elements(By.XPATH, "//div[@class='des']/h2/a[@class='strongbox']")
     for btn in btns:
         browser.switch_to.window(handle)
         time.sleep(8)
@@ -86,7 +87,8 @@ while True:
     try:
         print('翻下一页')
         browser.switch_to.window(handle)
-        next_btn = browser.find_elements_by_css_selector("[class='next']")[0]
+#        next_btn = browser.find_elements_by_css_selector("[class='next']")[0]
+        next_btn = browser.find_elements(By.CSS_SELECTOR,"[class='next']")[0]
         next_btn.click()
         time.sleep(5)
     except:
